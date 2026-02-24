@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions | Sikkim Bible College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1E3A8A; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .nav-scrolled { background: white !important; color: #1E3A8A !important; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .check-item::before { content: '✓'; color: var(--gold); font-weight: bold; margin-right: 10px; }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div id="header-container"></div>
+
+    <header class="relative h-[40vh] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[#1E3A8A]/70 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1523050853064-8bf138662363?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Library">
+        </div>
+        <div class="relative z-20 px-4" data-aos="fade-up">
+            <h1 class="heading-font text-5xl md:text-6xl mb-2">Join Our Community</h1>
+            <p class="text-yellow-500 uppercase tracking-widest font-bold text-sm">Enrollment for 2026 Academic Year</p>
+        </div>
+    </header>
+
+    <main class="py-20 max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-3 gap-12">
+            
+            <div class="lg:col-span-2 space-y-12">
+                <section data-aos="fade-right">
+                    <h2 class="heading-font text-3xl text-blue-900 mb-6">General Requirements</h2>
+                    <p class="text-gray-600 mb-6">We seek students who are spiritually vibrant, academically capable, and called to serve the body of Christ. Below are the basic eligibility criteria:</p>
+                    <ul class="grid md:grid-cols-2 gap-4 text-gray-700">
+                        <li class="check-item">Minimum age of 18 years</li>
+                        <li class="check-item">Born-again Christian experience</li>
+                        <li class="check-item">Active member of a local church</li>
+                        <li class="check-item">Class 12 Pass (for B.Th)</li>
+                        <li class="check-item">B.Th or Graduate (for M.Div)</li>
+                        <li class="check-item">Proficiency in English</li>
+                    </ul>
+                </section>
+
+                <section data-aos="fade-right" data-aos-delay="100">
+                    <h2 class="heading-font text-3xl text-blue-900 mb-6">Application Process</h2>
+                    <div class="relative border-l-2 border-blue-900/20 ml-3 space-y-10">
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-yellow-500 rounded-full"></div>
+                            <h4 class="font-bold text-blue-900">Step 1: Download & Fill</h4>
+                            <p class="text-sm text-gray-500">Download the application packet and fill out all details manually or digitally.</p>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-900 rounded-full"></div>
+                            <h4 class="font-bold text-blue-900">Step 2: Recommendation</h4>
+                            <p class="text-sm text-gray-500">Obtain a recommendation letter from your local Church Pastor or Elder.</p>
+                        </div>
+                        <div class="relative pl-8">
+                            <div class="absolute -left-[9px] top-1 w-4 h-4 bg-blue-900 rounded-full"></div>
+                            <h4 class="font-bold text-blue-900">Step 3: Submission</h4>
+                            <p class="text-sm text-gray-500">Submit the forms along with previous academic transcripts and the application fee.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-3xl shadow-xl border border-slate-100" data-aos="zoom-in">
+                    <h3 class="font-bold text-blue-900 mb-6 flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        Download Forms
+                    </h3>
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-yellow-50 transition border border-transparent hover:border-yellow-200">
+                            <span class="text-sm font-medium">B.Th Application Form</span>
+                            <span class="text-[10px] bg-blue-900 text-white px-2 py-1 rounded uppercase">PDF</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-yellow-50 transition border border-transparent hover:border-yellow-200">
+                            <span class="text-sm font-medium">M.Div Prospectus</span>
+                            <span class="text-[10px] bg-blue-900 text-white px-2 py-1 rounded uppercase">PDF</span>
+                        </a>
+                        <a href="#" class="flex items-center justify-between p-4 bg-slate-50 rounded-xl hover:bg-yellow-50 transition border border-transparent hover:border-yellow-200">
+                            <span class="text-sm font-medium">Medical Fitness Form</span>
+                            <span class="text-[10px] bg-blue-900 text-white px-2 py-1 rounded uppercase">PDF</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-blue-900 p-8 rounded-3xl text-white shadow-xl" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="font-bold text-yellow-500 mb-4 uppercase tracking-widest text-xs">Important Dates</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <p class="text-blue-200 text-xs">Early Application Deadline</p>
+                            <p class="font-bold">April 15, 2026</p>
+                        </div>
+                        <div class="pt-4 border-t border-white/10">
+                            <p class="text-blue-200 text-xs">Entrance Exam & Interview</p>
+                            <p class="font-bold">May 10, 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-12 text-center text-sm">
+        <p>© 2026 Sikkim Bible College. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

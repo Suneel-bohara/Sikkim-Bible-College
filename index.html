@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sikkim Bible College | Equipping Leaders for Christ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1E3A8A; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .nav-scrolled { background: white !important; color: #1E3A8A !important; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        .nav-link { position: relative; transition: all 0.3s; }
+        .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--gold); transition: width 0.3s; }
+        .nav-link:hover::after { width: 100%; }
+        .dropdown:hover .dropdown-menu { display: block; }
+    </style>
+</head>
+<body class="bg-slate-50 overflow-x-hidden">
+
+    <div id="header-container"></div>
+
+    <section class="relative h-[90vh] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[#1E3A8A]/70 z-10"></div>
+            
+            <div class="absolute inset-0 bg-white/10 mix-blend-overlay z-20"></div>
+
+            <img src="https://images.unsplash.com/photo-1544731612-de7f96afe55f?auto=format&fit=crop&q=80" 
+                class="w-full h-full object-cover transform scale-110" 
+                id="hero-img" 
+                alt="Himalayas">
+        </div>
+        <div class="relative z-20 px-4 mt-20" data-aos="fade-up">
+            <h1 class="heading-font text-5xl md:text-7xl lg:text-8xl mb-6">Faith-Based <span class="text-yellow-500 italic">Leadership</span></h1>
+            <p class="max-w-xl mx-auto text-lg text-blue-50 mb-10 font-light drop-shadow-md">Study God's Word in the serene beauty of the Himalayas. Now accepting applications for the 2026 Academic Year.</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="programs.html" class="bg-white text-blue-900 px-10 py-4 rounded-full font-bold hover:bg-yellow-500 transition-colors shadow-xl">Explore Programs</a>
+                <a href="about.html" class="border border-white/40 backdrop-blur-sm px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">Our Heritage</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-white relative">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="heading-font text-5xl text-blue-900 mb-8">Biblical Integrity in a Changing World</h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">Established in the misty mountains of Sikkim, SBC has been a beacon of theological truth for decades. We don't just grant degrees; we mentor servants of the Cross.</p>
+                <div class="grid grid-cols-2 gap-4 mt-8">
+                    <div class="p-4 border-l-4 border-yellow-500 bg-slate-50">
+                        <h4 class="font-bold text-blue-900 uppercase text-sm">Mission</h4>
+                        <p class="text-xs text-gray-500">To provide Christ-centered education for global impact.</p>
+                    </div>
+                    <div class="p-4 border-l-4 border-blue-900 bg-slate-50">
+                        <h4 class="font-bold text-blue-900 uppercase text-sm">Vision</h4>
+                        <p class="text-xs text-gray-500">A community of scholars radiating the gospel of peace.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="relative" data-aos="fade-left">
+                <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80" class="rounded-2xl shadow-2xl" alt="Classroom">
+                <div class="absolute -bottom-10 -left-10 glass p-8 rounded-xl shadow-xl hidden md:block">
+                    <p class="text-4xl font-bold text-blue-900">35+</p>
+                    <p class="text-gray-500 font-semibold uppercase text-xs">Years of Heritage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="doctrine" class="py-24 bg-slate-900 text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="heading-font text-5xl mb-4" data-aos="fade-up">Our Doctrinal Pillars</h2>
+                <p class="text-blue-300">Unshakable truths that guide our teaching</p>
+            </div>
+            <div class="grid lg:grid-cols-4 gap-6" data-aos="fade-up">
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-blue-800 transition group cursor-pointer">
+                    <span class="text-yellow-500 font-bold text-xl block mb-4">01.</span>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Sola Scriptura</h3>
+                    <p class="text-blue-100 text-sm opacity-70">The Bible is the sole infallible rule of faith and practice.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-blue-800 transition group cursor-pointer">
+                    <span class="text-yellow-500 font-bold text-xl block mb-4">02.</span>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Christocentric</h3>
+                    <p class="text-blue-100 text-sm opacity-70">All scripture points to the Person and Work of Jesus Christ.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-blue-800 transition group cursor-pointer">
+                    <span class="text-yellow-500 font-bold text-xl block mb-4">03.</span>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Pneumatological</h3>
+                    <p class="text-blue-100 text-sm opacity-70">Empowerment by the Holy Spirit for effective ministry.</p>
+                </div>
+                <div class="p-8 border border-white/10 rounded-2xl hover:bg-blue-800 transition group cursor-pointer">
+                    <span class="text-yellow-500 font-bold text-xl block mb-4">04.</span>
+                    <h3 class="text-2xl font-bold mb-4 group-hover:translate-x-2 transition-transform">Missional</h3>
+                    <p class="text-blue-100 text-sm opacity-70">A commitment to the Great Commission across the Himalayas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="stats-section" class="py-16 bg-yellow-500">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-12 text-blue-900 font-bold text-center">
+            <div>
+                <p class="text-5xl stat-number" data-target="1500">0</p>
+                <p class="uppercase text-xs tracking-tighter mt-2">Alumni</p>
+            </div>
+            <div>
+                <p class="text-5xl stat-number" data-target="12">0</p>
+                <p class="uppercase text-xs tracking-tighter mt-2">Nations Served</p>
+            </div>
+            <div>
+                <p class="text-5xl stat-number" data-target="40">0</p>
+                <p class="uppercase text-xs tracking-tighter mt-2">Staff & Faculty</p>
+            </div>
+            <div>
+                <p class="text-5xl stat-number" data-target="100">0</p>
+                <p class="uppercase text-xs tracking-tighter mt-2">% Scholarship</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="campus" class="py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="heading-font text-5xl text-blue-900 text-center mb-16" data-aos="fade-down">Glimpses of SBC</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="overflow-hidden rounded-xl h-64 shadow-lg" data-aos="zoom-in">
+                    <img src="https://images.unsplash.com/photo-1492533230914-d30a50ad217c?auto=format&fit=crop&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl h-64 shadow-lg md:col-span-2" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl h-64 shadow-lg md:col-span-2" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+                <div class="overflow-hidden rounded-xl h-64 shadow-lg" data-aos="zoom-in" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80" class="w-full h-full object-cover hover:scale-110 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="news" class="py-24 bg-blue-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-16">
+                <div>
+                    <h2 class="heading-font text-5xl text-blue-900">Campus News</h2>
+                    <p class="text-gray-500 mt-2">Stay updated with our latest activities</p>
+                </div>
+                <a href="#" class="text-blue-900 font-bold border-b-2 border-yellow-500">View All Updates</a>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up">
+                    <span class="bg-blue-100 text-blue-900 px-3 py-1 rounded-full text-xs font-bold uppercase">Academic</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">2026 Admissions Open</h3>
+                    <p class="text-gray-500 text-sm mb-4">Applications for the Autumn semester are now being accepted for all B.Th and M.Div courses.</p>
+                    <span class="text-xs text-gray-400 font-medium">Feb 15, 2026</span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="100">
+                    <span class="bg-yellow-100 text-yellow-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Outreach</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Village Ministry Trip</h3>
+                    <p class="text-gray-500 text-sm mb-4">Our second-year students completed a 10-day mission trip to the remote villages of North Sikkim.</p>
+                    <span class="text-xs text-gray-400 font-medium">Jan 28, 2026</span>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100" data-aos="fade-up" data-aos-delay="200">
+                    <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Conference</span>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Annual Bible Seminar</h3>
+                    <p class="text-gray-500 text-sm mb-4">Join us next month for the 'Truth in Culture' seminar featuring international guest speakers.</p>
+                    <span class="text-xs text-gray-400 font-medium">Jan 12, 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="footer-container"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

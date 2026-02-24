@@ -1,0 +1,33 @@
+<nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 py-8 px-4 md:px-12 flex justify-between items-center text-white">
+    <div class="flex items-center gap-3">
+        <div class="w-12 h-12 bg-blue-900 text-white border border-white/20 rounded-lg flex items-center justify-center font-bold shadow-lg">SBC</div>
+        <div class="flex flex-col text-left">
+            <span class="text-xl font-bold tracking-tighter leading-none">SIKKIM</span>
+            <span class="text-xs tracking-[0.2em] font-light uppercase">Bible College</span>
+        </div>
+    </div>
+
+    <div class="hidden lg:flex space-x-10 font-semibold uppercase text-[12px] tracking-widest items-center">
+        <a href="index.html" class="nav-link hover:text-yellow-500 transition">Home</a>
+        <a href="about.html" class="nav-link hover:text-yellow-500 transition">About Us</a>
+        <a href="faculty.html" class="nav-link hover:text-yellow-500 transition">Faculty</a>
+        <a href="admissions.html" class="nav-link hover:text-yellow-500 transition">Admissions</a>
+        <a href="campus.html" class="nav-link hover:text-yellow-500 transition">Campus Life</a>
+        <a href="ministery.html" class="nav-link hover:text-yellow-500 transition">Ministery</a>
+        <a href="contact.html" class="nav-link hover:text-yellow-500 transition">Contact</a>
+    </div>
+
+    <div class="flex items-center gap-6">
+        <a href="apply.html" class="hidden md:block bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all shadow-xl">Apply Now</a>
+        <button id="mobile-menu-btn" class="lg:hidden text-3xl focus:outline-none">☰</button>
+    </div>
+</nav>
+
+<div id="mobile-overlay" class="fixed inset-0 bg-blue-900/98 z-[60] flex flex-col items-center justify-center space-y-8 text-white text-2xl font-bold translate-x-full transition-transform duration-500">
+    <button id="close-menu" class="absolute top-10 right-10 text-5xl">&times;</button>
+    <a href="index.html" class="hover:text-yellow-500">Home</a>
+    <a href="about.html" class="hover:text-yellow-500">About Us</a>
+    <a href="programs.html" class="hover:text-yellow-500">Academics</a>
+    <a href="admissions.html" class="hover:text-yellow-500">Admissions</a>
+    <a href="contact.html" class="hover:text-yellow-500">Contact</a>
+</div>
