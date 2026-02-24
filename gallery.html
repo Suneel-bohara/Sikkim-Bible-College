@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery | Sikkim Bible College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1E3A8A; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .filter-btn.active { background-color: var(--primary); color: white; border-color: var(--primary); }
+        .gallery-item.hidden { display: none; }
+        /* Smooth fade-in for filtered items */
+        .gallery-item { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50">
+
+    <div id="header-container"></div>
+
+    <header class="relative h-[45vh] flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[#1E3A8A]/70 z-10"></div>
+            <img src="https://images.unsplash.com/photo-1492533230914-d30a50ad217c?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Gallery">
+        </div>
+        <div class="relative z-20 px-4" data-aos="fade-up">
+            <h1 class="heading-font text-5xl md:text-6xl mb-2">Life in Pictures</h1>
+            <p class="text-yellow-500 uppercase tracking-widest font-bold text-sm">Capturing God's Work in the Himalayas</p>
+        </div>
+    </header>
+
+    <main class="py-20 max-w-7xl mx-auto px-6">
+        
+        <div class="flex flex-wrap justify-center gap-4 mb-16" data-aos="fade-up">
+            <button class="filter-btn active px-8 py-2 border-2 border-slate-200 rounded-full font-bold text-sm transition-all" data-filter="all">All Photos</button>
+            <button class="filter-btn px-8 py-2 border-2 border-slate-200 rounded-full font-bold text-sm transition-all" data-filter="campus">Campus</button>
+            <button class="filter-btn px-8 py-2 border-2 border-slate-200 rounded-full font-bold text-sm transition-all" data-filter="ministry">Ministry</button>
+            <button class="filter-btn px-8 py-2 border-2 border-slate-200 rounded-full font-bold text-sm transition-all" data-filter="graduation">Graduation</button>
+            <button class="filter-btn px-8 py-2 border-2 border-slate-200 rounded-full font-bold text-sm transition-all" data-filter="events">Events</button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+            
+            <div class="gallery-item overflow-hidden rounded-2xl h-80 shadow-lg md:col-span-2 group relative" data-category="campus">
+                <img src="https://images.unsplash.com/photo-1523050853064-8bf138662363?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">The Library Hall</span>
+                </div>
+            </div>
+
+            <div class="gallery-item overflow-hidden rounded-2xl h-80 shadow-lg group relative" data-category="ministry">
+                <img src="https://images.unsplash.com/photo-1515162305285-0293e4767cc2?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">Prayer Meeting</span>
+                </div>
+            </div>
+
+            <div class="gallery-item overflow-hidden rounded-2xl h-80 shadow-lg group relative" data-category="events">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">Christmas Fellowship</span>
+                </div>
+            </div>
+
+            <div class="gallery-item overflow-hidden rounded-2xl h-80 shadow-lg group relative" data-category="graduation">
+                <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">Class of 2025</span>
+                </div>
+            </div>
+
+            <div class="gallery-item overflow-hidden rounded-2xl h-[42rem] shadow-lg md:row-span-2 group relative" data-category="ministry">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">Mission Outreach</span>
+                </div>
+            </div>
+
+            <div class="gallery-item overflow-hidden rounded-2xl h-80 shadow-lg group relative" data-category="campus">
+                <img src="https://images.unsplash.com/photo-1544731612-de7f96afe55f?auto=format&fit=crop&q=80" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                <div class="absolute inset-0 bg-blue-900/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <span class="text-white font-bold border-b-2 border-yellow-500">Mountain View</span>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script src="gallery-logic.js"></script>
+</body>
+</html>
