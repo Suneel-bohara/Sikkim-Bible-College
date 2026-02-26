@@ -1,30 +1,23 @@
-<nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 py-8 px-4 md:px-12 flex justify-between items-center text-white">
+<nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 py-3 px-4 md:px-12 flex justify-between items-center text-white bg-black/80 backdrop-blur-sm">
     <a href="index.html" class="flex items-center group">
         <img src="/assets/img/logo-white.png" alt="Sikkim Bible College" id="header-logo" 
-             class="h-20 w-auto transition-all duration-500 drop-shadow-lg group-hover:brightness-110">
+             class="h-20 w-auto transition-all duration-500 drop-shadow-lg group-hover:scale-105">
     </a>
 
     <div class="hidden lg:flex space-x-10 font-semibold uppercase text-[12px] tracking-widest items-center">
-        <a href="index.html" class="nav-link hover:text-yellow-500 transition">Home</a>
-        <a href="about.html" class="nav-link hover:text-yellow-500 transition">About Us</a>
-        <a href="faculty.html" class="nav-link hover:text-yellow-500 transition">Faculty</a>
-        <a href="admissions.html" class="nav-link hover:text-yellow-500 transition">Admissions</a>
-        <a href="campus.html" class="nav-link hover:text-yellow-500 transition">Campus Life</a>
-        <a href="ministery.html" class="nav-link hover:text-yellow-500 transition">Ministery</a>
-        <a href="contact.html" class="nav-link hover:text-yellow-500 transition">Contact</a>
+        <a href="index.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Home</a>
+        <a href="about.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">About Us</a>
+        <a href="faculty.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Faculty</a>
+        <a href="admissions.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Admissions</a>
+        <a href="campus.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Campus Life</a>
+        <a href="ministery.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Ministery</a>
+        <a href="contact.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Contact</a>
     </div>
 
     <div class="flex items-center gap-6">
-        <a href="apply.html" class="hidden md:block bg-yellow-500 text-blue-900 px-8 py-3 rounded-full font-bold text-sm hover:bg-white hover:scale-105 transition-all shadow-xl">Apply Now</a>
-        <button id="mobile-menu-btn" class="lg:hidden text-3xl focus:outline-none">☰</button>
+        <a href="apply.html" class="hidden md:block bg-[#e1302e] text-white px-6 py-2 rounded-none font-bold text-sm hover:bg-white hover:text-black transition-all shadow-xl uppercase tracking-wider">
+            Apply Now
+        </a>
+        <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none hover:text-[#e1302e]">☰</button>
     </div>
 </nav>
-
-<div id="mobile-overlay" class="fixed inset-0 bg-blue-900/98 z-[60] flex flex-col items-center justify-center space-y-8 text-white text-2xl font-bold translate-x-full transition-transform duration-500">
-    <button id="close-menu" class="absolute top-10 right-10 text-5xl">&times;</button>
-    <a href="index.html" class="hover:text-yellow-500">Home</a>
-    <a href="about.html" class="hover:text-yellow-500">About Us</a>
-    <a href="programs.html" class="hover:text-yellow-500">Academics</a>
-    <a href="admissions.html" class="hover:text-yellow-500">Admissions</a>
-    <a href="contact.html" class="hover:text-yellow-500">Contact</a>
-</div>
