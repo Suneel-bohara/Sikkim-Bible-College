@@ -66,9 +66,9 @@ let currentFileRequest = "";
 
 // Mapping unique passwords to filenames
 const PDF_PASSWORDS = {
-    "STJ_Vol_2.pdf": "SIKKIM",        // Password for 'The Gospel in Himalayas'
-    "foundations.pdf": "SIKKIM",    // Password for 'Biblical Foundations'
-    "journal2025.pdf": "SIKKIM",     // Password for 'SBC Theological Journal'
+    "STJ_Vol_1.pdf": "SIKKIM",        // Password for 'The Gospel in Himalayas'
+    "STJ_Vol_2.pdf": "BIBLE",    // Password for 'Biblical Foundations'
+    "In_The_Shadow_of_Grace.pdf": "JOURNAL",     // Password for 'SBC Theological Journal'
     "default": "SIKKIM"
 };
 
