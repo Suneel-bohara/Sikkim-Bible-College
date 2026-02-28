@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+    
 
     // 4. ANIMATIONS (AOS)
     if (typeof AOS !== 'undefined') {
