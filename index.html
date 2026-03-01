@@ -9,12 +9,12 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         :root { --primary: #1E3A8A; --gold: #D4AF37; }
-        body { font-family: 'Inter', sans-serif; }
+        body { font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .heading-font { font-family: 'Playfair Display', serif; }
-        .nav-scrolled { background: white !important; color: #1E3A8A !important; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        
+        /* Cleaned up: Removed .nav-scrolled to let JS handle the colors properly */
         .nav-link { position: relative; transition: all 0.3s; }
         .nav-link::after { content: ''; position: absolute; width: 0; height: 2px; bottom: -4px; left: 0; background-color: var(--gold); transition: width 0.3s; }
-        .dropdown:hover .dropdown-menu { display: block; }
     </style>
 </head>
 <body class="bg-slate-50 overflow-x-hidden">

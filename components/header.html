@@ -1,40 +1,42 @@
-<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 h-16 md:h-24 px-4 md:px-12 flex items-center text-white bg-black/80 backdrop-blur-sm">
+<nav id="main-nav" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 h-24 px-4 md:px-12 flex items-center text-white bg-[#1E3A8A]/90 backdrop-blur-sm shadow-lg">
     
     <div class="flex flex-1 items-center justify-start">
-        <a href="index.html" class="flex items-center group py-2">
+        <a href="index.html" class="flex items-center group">
             <img src="/assets/img/logo-white.png" alt="Sikkim Bible College" id="header-logo" 
-                 class="h-12 md:h-16 w-auto transition-all duration-500 drop-shadow-lg group-hover:scale-105">
+                 class="h-14 md:h-16 w-auto transition-all duration-500 drop-shadow-lg group-hover:scale-105">
         </a>
     </div>
 
     <div class="hidden lg:flex items-center justify-center">
         <div class="flex space-x-8 font-semibold uppercase text-[12px] tracking-widest">
-            <a href="index.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Home</a>
-            <a href="about.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">About Us</a>
-            <a href="faculty.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Faculty</a>
-            <a href="literature.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Literature</a>
-            <a href="gallery.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Gallery</a>
-            <a href="contact.html" class="nav-link hover:text-[#e1302e] transition-colors duration-300">Contact</a>
+            <a href="index.html" class="nav-link hover:text-white transition-colors duration-300">Home</a>
+            <a href="about.html" class="nav-link hover:text-white transition-colors duration-300">About Us</a>
+            <a href="faculty.html" class="nav-link hover:text-white transition-colors duration-300">Faculty</a>
+            <a href="literature.html" class="nav-link hover:text-white transition-colors duration-300">Literature</a>
+            <a href="gallery.html" class="nav-link hover:text-white transition-colors duration-300">Gallery</a>
+            <a href="contact.html" class="nav-link hover:text-white transition-colors duration-300">Contact</a>
         </div>
     </div>
 
     <div class="flex flex-1 items-center justify-end gap-6">
-        <a href="apply.html" class="hidden md:block bg-[#e1302e] text-white px-6 py-2 rounded-none font-bold text-sm hover:bg-white hover:text-black transition-all shadow-xl uppercase tracking-wider">
-            Apply Now
+        <a href="apply.html" class="hidden md:block bg-white text-[#1E3A8A] px-6 py-2 font-bold text-sm hover:bg-slate-100 transition-all shadow-xl uppercase tracking-wider">
+        Apply Now
         </a>
-        <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none hover:text-[#e1302e] transition-colors">☰</button>
+        <button id="mobile-menu-btn" class="lg:hidden text-2xl focus:outline-none hover:text-white transition-colors">☰</button>
     </div>
 </nav>
 
-<div id="mobile-overlay" class="fixed inset-0 bg-black z-[60] flex flex-col items-center justify-center space-y-8 text-white text-2xl font-bold translate-x-full transition-transform duration-500 ease-in-out">
-    <button id="close-menu" class="absolute top-8 right-8 text-5xl font-light hover:text-[#e1302e] transition-colors">&times;</button>
+<div id="mobile-overlay" class="fixed inset-0 bg-[#1E3A8A] z-[60] flex flex-col items-center justify-center space-y-8 text-white text-2xl font-bold translate-x-full transition-transform duration-500 ease-in-out">
+    <button id="close-menu" class="absolute top-8 right-8 text-5xl font-light hover:text-white transition-colors">&times;</button>
     
-    <a href="index.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">Home</a>
-    <a href="about.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">About Us</a>
-    <a href="faculty.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">Faculty</a>
-    <a href="literature.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">Literature</a>
-    <a href="gallery.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">Gallery</a>
-    <a href="contact.html" class="nav-link-mobile hover:text-[#e1302e] transition-colors">Contact</a>
+    <a href="index.html" class="nav-link-mobile hover:text-white transition-colors">Home</a>
+    <a href="about.html" class="nav-link-mobile hover:text-white transition-colors">About Us</a>
+    <a href="faculty.html" class="nav-link-mobile hover:text-white transition-colors">Faculty</a>
+    <a href="literature.html" class="nav-link-mobile hover:text-white transition-colors">Literature</a>
+    <a href="gallery.html" class="nav-link-mobile hover:text-white transition-colors">Gallery</a>
+    <a href="contact.html" class="nav-link-mobile hover:text-white transition-colors">Contact</a>
     
-    <a href="apply.html" class="mt-4 bg-[#e1302e] text-white px-10 py-4 text-sm uppercase tracking-[0.2em] font-black">Apply Now</a>
+    <a href="apply.html" class="mt-4 !bg-white !text-[#1E3A8A] px-10 py-4 text-sm uppercase tracking-[0.2em] font-black border border-[#1E3A8A]/20 block text-center shadow-xl">
+    Apply Now
+    </a>
 </div>

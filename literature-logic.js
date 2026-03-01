@@ -1,6 +1,7 @@
 /**
  * Sikkim Bible College - Literature Page Logic
  * Handles: Component Loading, Dynamic Nav, and Unique PDF Passwords
+ * Theme: Blue (#1E3A8A) and White
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,15 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const closeBtn = document.getElementById('close-menu');
         const overlay = document.getElementById('mobile-overlay');
 
-        window.addEventListener('scroll', () => {
+        const handleScroll = () => {
             if (window.scrollY > 50) {
-                nav.classList.add('bg-black', 'shadow-2xl', 'py-4');
-                nav.classList.remove('py-8');
+                // FIXED: Use Brand Blue instead of Black
+                nav.classList.add('bg-[#1E3A8A]', 'shadow-2xl');
+                nav.classList.remove('bg-[#1E3A8A]/90', 'h-24');
+                nav.classList.add('h-20');
             } else {
-                nav.classList.remove('bg-black', 'shadow-2xl', 'py-4');
-                nav.classList.add('py-8');
+                nav.classList.remove('bg-[#1E3A8A]', 'shadow-2xl', 'h-20');
+                nav.classList.add('bg-[#1E3A8A]/90', 'h-24');
             }
-        });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll();
 
         if (mobileBtn && overlay) {
             mobileBtn.addEventListener('click', () => overlay.classList.remove('translate-x-full'));
@@ -47,12 +53,22 @@ document.addEventListener('DOMContentLoaded', () => {
             closeBtn.addEventListener('click', () => overlay.classList.add('translate-x-full'));
         }
 
+        // --- FIXED: ACTIVE LINK HIGHLIGHT (WHITE) ---
         const currentPath = window.location.pathname.split("/").pop() || 'index.html';
-        document.querySelectorAll('.nav-link').forEach(link => {
+        document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
             if (link.getAttribute('href') === currentPath) {
-                link.classList.add('text-[#e1302e]', 'border-b-2', 'border-[#e1302e]');
+                // Removed Red logic, added White logic
+                link.classList.add('text-white', 'border-b-2', 'border-white');
+                link.classList.remove('text-[#e1302e]'); 
             }
         });
+
+        // --- FIXED: FORCE APPLY BUTTON WHITE ---
+        const applyBtn = document.querySelector('a[href="apply.html"]');
+        if (applyBtn) {
+            applyBtn.classList.add('!bg-white', '!text-[#1E3A8A]');
+            applyBtn.classList.remove('bg-black', 'text-white');
+        }
     }
 
     if (typeof AOS !== 'undefined') {
@@ -61,14 +77,12 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // --- PASSWORD SYSTEM ---
-
 let currentFileRequest = "";
 
-// Mapping unique passwords to filenames
 const PDF_PASSWORDS = {
-    "STJ_Vol_1.pdf": "SIKKIM",        // Password for 'The Gospel in Himalayas'
-    "STJ_Vol_2.pdf": "BIBLE",    // Password for 'Biblical Foundations'
-    "In_The_Shadow_of_Grace.pdf": "JOURNAL",     // Password for 'SBC Theological Journal'
+    "STJ_Vol_1.pdf": "SIKKIM",
+    "STJ_Vol_2.pdf": "BIBLE",
+    "In_The_Shadow_of_Grace.pdf": "JOURNAL",
     "default": "SIKKIM"
 };
 
@@ -84,7 +98,8 @@ function submitPassword() {
     const requiredPassword = PDF_PASSWORDS[currentFileRequest] || PDF_PASSWORDS["default"];
 
     if (userInput === requiredPassword) {
-        window.open('/assets/pdf/' + currentFileRequest, '_blank');
+        // Ensure path matches your actual folder structure
+        window.open('assets/pdf/' + currentFileRequest, '_blank');
         closeModal();
     } else {
         const inputField = document.getElementById('modal-password-input');
@@ -92,7 +107,6 @@ function submitPassword() {
         setTimeout(() => {
             inputField.classList.remove('animate-shake', 'border-red-500');
         }, 500);
-        alert("Incorrect Access Key for this document.");
     }
 }
 
@@ -101,13 +115,10 @@ function closeModal() {
     document.getElementById('modal-password-input').value = "";
 }
 
-// Allow pressing "Enter" to submit
 document.addEventListener('keydown', (e) => {
     const modal = document.getElementById('password-modal');
-    if (e.key === "Enter" && !modal.classList.contains('hidden')) {
-        submitPassword();
-    }
-    if (e.key === "Escape" && !modal.classList.contains('hidden')) {
-        closeModal();
-    }
+    if (!modal || modal.classList.contains('hidden')) return;
+
+    if (e.key === "Enter") submitPassword();
+    if (e.key === "Escape") closeModal();
 });

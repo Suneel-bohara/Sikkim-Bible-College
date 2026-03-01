@@ -39,16 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Nav Logic Initialized. Mobile Button found:", !!mobileBtn);
 
         // --- SCROLL LOGIC ---
-        const handleScroll = () => {
+            const handleScroll = () => {
+            const nav = document.getElementById('main-nav');
+            
             if (window.scrollY > 50) {
-                nav.classList.add('bg-black', 'shadow-2xl', 'py-4');
-                nav.classList.remove('py-8');
+                // Sticky State: Solid Brand Blue
+                nav.classList.add('bg-[#1E3A8A]', 'shadow-2xl');
+                nav.classList.remove('bg-[#1E3A8A]/90', 'h-24'); // Remove transparent state
+                nav.classList.add('h-20'); // Make it slightly thinner on scroll
             } else {
-                nav.classList.remove('bg-black', 'shadow-2xl', 'py-4');
-                nav.classList.add('py-8');
+                // Top State: Transparent Brand Blue
+                nav.classList.remove('bg-[#1E3A8A]', 'shadow-2xl', 'h-20');
+                nav.classList.add('bg-[#1E3A8A]/90', 'h-24'); // Return to original height/transparency
             }
         };
-
         window.addEventListener('scroll', handleScroll);
         handleScroll();
 
@@ -73,7 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const navLinks = document.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             if (link.getAttribute('href') === currentPath) {
-                link.classList.add('text-[#e1302e]', 'border-b-2', 'border-[#e1302e]');
+                // Changed text color to white and border to white
+                link.classList.add('text-white', 'border-b-2', 'border-white');
+                link.classList.remove('text-white/70'); // Optional: ensure full opacity
             }
         });
     }
