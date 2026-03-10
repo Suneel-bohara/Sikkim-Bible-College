@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" class="overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Purchase | Sikkim Bible College</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root { --primary: #1E3A8A; --gold: #D4AF37; }
+        body { font-family: 'Inter', sans-serif; }
+        .heading-font { font-family: 'Playfair Display', serif; }
+        .input-focus { @apply focus:ring-2 focus:ring-[#1E3A8A] focus:border-transparent outline-none transition-all; }
+    </style>
+</head>
+<body class="bg-slate-50 overflow-x-hidden">
+
+    <div id="header-container"></div>
+
+    <header class="relative h-[35vh] mt-16 md:mt-24 flex items-center justify-center text-center text-white overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-[#1E3A8A]/90 z-10"></div>
+            <img src="/assets/img/Other/Purchase-Cover.jpg" class="w-full h-full object-cover" alt="Digital Payment">
+        </div>
+        <div class="relative z-20 px-4" data-aos="fade-up">
+            <h1 class="heading-font text-4xl md:text-6xl mb-2">Digital Library</h1>
+            <p class="text-white/80 uppercase tracking-widest font-bold text-xs">Instant Access to Scholarly Resources</p>
+        </div>
+    </header>
+
+    <main class="py-16 max-w-4xl mx-auto px-6">
+        <div class="bg-white rounded-[2.5rem] shadow-2xl overflow-hidden border border-slate-100" data-aos="fade-up">
+            
+            <div id="form-container">
+                <form id="purchaseForm" class="p-8 md:p-12 space-y-8">
+                    
+                    <div class="grid md:grid-cols-2 gap-8 pb-8 border-b border-slate-100">
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Choose Publication</label>
+                            <select id="itemSelect" name="itemName" class="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl font-bold text-[#1E3A8A] input-focus">
+                                <option value="STJ-V01">Sikkim Theological Journal - V1</option>
+                                <option value="STJ-V02">Sikkim Theological Journal - V2</option>
+                                <option value="Shadow-Grace">The Shadow of Grace (2025)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Price (INR)</label>
+                            <input type="text" id="itemPrice" name="itemPrice" readonly 
+                                   class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl font-bold text-green-600 text-xl">
+                        </div>
+                    </div>
+
+                    <div id="productDescription" class="p-5 bg-blue-50 rounded-2xl text-[#1E3A8A] text-sm italic border-l-4 border-[#1E3A8A]">
+                        </div>
+
+                    <div class="space-y-4">
+                        <h3 class="heading-font text-xl text-[#1E3A8A]">Recipient Details</h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <input type="text" name="fullName" placeholder="Full Name" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
+                            <input type="email" name="email" placeholder="Email (For Digital Delivery)" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
+                        </div>
+                        <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-[2rem] border-2 border-dashed border-slate-200 flex flex-col md:flex-row items-center gap-8">
+                        <div class="shrink-0 text-center">
+                            <img id="qrCodeDisplay" src="/assets/img/Other/QR.jpg" alt="UPI QR" class="w-40 h-40 bg-white p-2 rounded-xl shadow-md border border-slate-200 mb-2">
+                            <p class="text-[10px] font-bold text-slate-400 uppercase">Scan to Pay</p>
+                        </div>
+                        <div class="flex-1">
+                            <h4 class="font-bold text-[#1E3A8A] mb-2">Verify Transaction</h4>
+                            <p class="text-xs text-slate-500 mb-4">Please upload the screenshot of your payment for instant verification and digital delivery.</p>
+                            <label class="inline-block bg-[#1E3A8A] text-white px-6 py-2 rounded-xl cursor-pointer text-xs font-bold uppercase hover:bg-black transition-all">
+                                Upload Proof
+                                <input type="file" id="screenshot" accept="image/*" required class="hidden">
+                            </label>
+                            <span id="file-status" class="ml-3 text-[10px] text-green-600 font-bold uppercase"></span>
+                            <input type="hidden" id="screenshotBase64" name="screenshotBase64">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="submitBtn" class="w-full bg-[#1E3A8A] text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-black transition-all shadow-xl">
+                        Confirm & Access Digital Copy
+                    </button>
+                </form>
+            </div>
+
+            <div id="successBox" class="hidden p-20 text-center">
+                <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">✓</div>
+                <h2 class="heading-font text-4xl text-[#1E3A8A] mb-4">Payment Received</h2>
+                <p class="text-slate-500 mb-8 max-w-sm mx-auto">Thank you for your purchase. We are verifying the screenshot. You will receive the digital download link via email/WhatsApp shortly.</p>
+                <a href="literature.html" class="px-10 py-4 bg-[#1E3A8A] text-white rounded-full font-bold uppercase text-xs tracking-widest">Browse More</a>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/purchase-logic.js"></script>
+</body>
+</html>
