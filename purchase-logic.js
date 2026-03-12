@@ -8,17 +8,17 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. DATA CONFIGURATION
     const PRODUCTS = {
         "STJ-V01": {
-            price: 450,
+            price: 100,
             desc: "Sikkim Theological Journal Vol 1: Historical perspectives on Himalayan missions.",
             qr: "assets/img/Other/QR.jpg"
         },
         "STJ-V02": {
-            price: 500,
+            price: 100,
             desc: "Sikkim Theological Journal Vol 2: Core Biblical doctrines for regional leadership.",
             qr: "assets/img/Other/QR.jpg"
         },
         "Shadow-Grace": {
-            price: 650,
+            price: 100,
             desc: "The Shadow of Grace (2025): Advanced scholarly research and theological debates.",
             qr: "assets/img/Other/QR.jpg"
         }
