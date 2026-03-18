@@ -1,32 +1,8 @@
-/**
- * Sikkim Bible College - Purchase Logic
- * Handles dynamic pricing, image conversion, and data submission
- */
-
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. DATA CONFIGURATION
-    const PRODUCTS = {
-        "STJ-V01": {
-            price: 100,
-            desc: "Sikkim Theological Journal Vol 1: Historical perspectives on Himalayan missions.",
-            qr: "assets/img/Other/QR.jpg"
-        },
-        "STJ-V02": {
-            price: 100,
-            desc: "Sikkim Theological Journal Vol 2: Core Biblical doctrines for regional leadership.",
-            qr: "assets/img/Other/QR.jpg"
-        },
-        "Shadow-Grace": {
-            price: 100,
-            desc: "The Shadow of Grace (2025): Advanced scholarly research and theological debates.",
-            qr: "assets/img/Other/QR.jpg"
-        }
-    };
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyG3txcCyNCDZWelCcSiSyN0NmrRQUx_YApxvlVPZqf-TrsrBydF_xVnOZ_7Hb5MDAHrA/exec';
+    let PRODUCTS_DB = {};
 
-    const GOOGLE_SCRIPT_URL = 'YOUR_DEPLOYED_WEB_APP_URL';
-
-    // 2. UI ELEMENTS
     const itemSelect = document.getElementById('itemSelect');
     const priceInput = document.getElementById('itemPrice');
     const descBox = document.getElementById('productDescription');
@@ -35,79 +11,87 @@ document.addEventListener('DOMContentLoaded', () => {
     const base64Input = document.getElementById('screenshotBase64');
     const purchaseForm = document.getElementById('purchaseForm');
 
-    // 3. COMPONENT LOADER (Global Header/Footer)
-    const loadComponents = async () => {
-        const headerRes = await fetch('components/header.html');
-        document.getElementById('header-container').innerHTML = await headerRes.text();
-        const footerRes = await fetch('components/footer.html');
-        document.getElementById('footer-container').innerHTML = await footerRes.text();
-        
-        // Init Nav Scroll Logic (Synchronized with index.html)
-        const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('bg-[#1E3A8A]', 'shadow-2xl', 'h-20');
-                nav.classList.remove('bg-[#1E3A8A]/90', 'h-24');
-            } else {
-                nav.classList.remove('bg-[#1E3A8A]', 'shadow-2xl', 'h-20');
-                nav.classList.add('bg-[#1E3A8A]/90', 'h-24');
-            }
-        });
-    };
+    // 1. Fetch Products from Sheet
+    const fetchProducts = async () => {
+        try {
+            const res = await fetch(GOOGLE_SCRIPT_URL);
+            PRODUCTS_DB = await res.json();
+            
+            if (PRODUCTS_DB && Object.keys(PRODUCTS_DB).length > 0) {
+                itemSelect.innerHTML = ""; // Clear loader
+                Object.keys(PRODUCTS_DB).forEach(key => {
+                    const opt = document.createElement('option');
+                    opt.value = key;
+                    opt.text = key;
+                    itemSelect.appendChild(opt);
+                });
 
-    // 4. DYNAMIC UPDATES
-    const updateUI = () => {
-        const selected = itemSelect.value;
-        const data = PRODUCTS[selected];
-        
-        if (data) {
-            priceInput.value = `₹${data.price}`;
-            descBox.innerText = data.desc;
-            qrDisplay.src = data.qr;
+                // Auto-select from URL
+                const params = new URLSearchParams(window.location.search);
+                if (params.has('item')) itemSelect.value = params.get('item');
+                
+                updateUI();
+            }
+        } catch (e) {
+            itemSelect.innerHTML = "<option>Offline Mode</option>";
         }
     };
 
-    // 5. IMAGE TO BASE64
+    const updateUI = () => {
+        const data = PRODUCTS_DB[itemSelect.value];
+        if (data) {
+            priceInput.value = `₹${data.price}`;
+            descBox.innerText = data.desc;
+            qrDisplay.src = data.qr || "/assets/img/Other/QR.jpg";
+        }
+    };
+
+    // 2. Image Processing
     screenshotInput.addEventListener('change', function() {
-        if (this.files && this.files[0]) {
-            document.getElementById('file-status').innerText = "✓ Uploaded";
+        if (this.files[0]) {
+            document.getElementById('file-status').innerText = "✓ Ready";
             const reader = new FileReader();
             reader.onload = (e) => base64Input.value = e.target.result.split(',')[1];
             reader.readAsDataURL(this.files[0]);
         }
     });
 
-    // 6. FORM SUBMISSION
+    // 3. Form Submission
     purchaseForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const btn = document.getElementById('submitBtn');
         btn.disabled = true;
-        btn.innerText = "Submitting Order...";
+        btn.innerText = "Saving Order...";
 
         const formData = new FormData(purchaseForm);
-        
+        const data = {};
+        formData.forEach((v, k) => data[k] = v);
+
         try {
-            // Using fetch with no-cors or standard POST depending on script setup
-            await fetch(GOOGLE_SCRIPT_URL, { method: 'POST', body: formData });
-            
+            await fetch(GOOGLE_SCRIPT_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(data)
+            });
             document.getElementById('form-container').classList.add('hidden');
             document.getElementById('successBox').classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        } catch (error) {
-            alert("Submission error. Please check your connection.");
+            window.scrollTo(0,0);
+        } catch (err) {
+            alert("Error saving order. Check your internet.");
             btn.disabled = false;
-            btn.innerText = "Confirm & Access Digital Copy";
         }
     });
 
-    // INITIALIZE
-    loadComponents();
-    
-    // Check for URL parameters from Literature Page
-    const params = new URLSearchParams(window.location.search);
-    if (params.has('item')) itemSelect.value = params.get('item');
-    
-    updateUI();
+    // Component Loader
+    const loadGlobal = async () => {
+        const h = await fetch('components/header.html');
+        document.getElementById('header-container').innerHTML = await h.text();
+        const f = await fetch('components/footer.html');
+        document.getElementById('footer-container').innerHTML = await f.text();
+    };
+
+    loadGlobal();
+    fetchProducts();
     itemSelect.addEventListener('change', updateUI);
-    if (typeof AOS !== 'undefined') AOS.init();
+    if (window.AOS) AOS.init();
 });

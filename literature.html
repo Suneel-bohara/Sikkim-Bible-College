@@ -13,8 +13,7 @@
         .heading-font { font-family: 'Playfair Display', serif; }
         .lit-card:hover img { transform: scale(1.05); filter: grayscale(0); }
         .lit-card img { transition: all 0.5s ease; filter: grayscale(100%); }
-        .lit-card { transition: all 0.3s ease; }
-
+        
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-5px); }
@@ -33,54 +32,44 @@
             <img src="https://images.unsplash.com/photo-1507738911741-383f12629610?auto=format&fit=crop&q=80" class="w-full h-full object-cover" alt="Library">
         </div>
         <div class="relative z-20 px-4" data-aos="fade-up">
-            <h1 class="heading-font text-5xl md:text-7xl mb-4">College Literature</h1>
+            <h1 class="heading-font text-5xl md:text-7xl mb-4 text-white">College Literature</h1>
             <p class="text-white uppercase tracking-widest font-bold text-sm">Scholarly Works & Biblical Resources</p>
         </div>
     </header>
 
     <section class="py-24 max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16" data-aos="fade-up">
-            <span class="text-blue-900 font-bold uppercase tracking-widest text-xs">The SBC Collection</span>
-            <h2 class="heading-font text-4xl mt-4 mb-6">Publications & Academic Journals</h2>
-            <div class="h-1 w-20 bg-[#e1302e] mx-auto"></div>
-        </div>
-
         <div class="grid md:grid-cols-3 gap-12 lg:gap-16">
             
-            <div class="lit-card group" data-aos="fade-up">
+            <div class="lit-card group text-center" data-aos="fade-up">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white mb-6">
-                    <img src="/assets/img/Journal Cover/STJ-V01.jpg" class="w-full h-[400px] object-cover" alt="Book 1">
-                    <!-- <div class="absolute top-4 left-4 bg-[#e1302e] text-white px-3 py-1 text-[10px] font-bold uppercase tracking-widest">Available</div> -->
+                    <img src="/assets/img/Journal Cover/STJ-V01.jpg" class="w-full h-[400px] object-cover" alt="STJ Vol 1">
                 </div>
-                <h3 class="heading-font text-2xl text-blue-900 mb-2">Sikkim Theological Journal - V1 </h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6 text-justify">A deep dive into the historical mission of the church across the mountain regions.</p>
-                <div class="flex gap-4">
-                    <button onclick="checkAccess('/assets/pdf/STJ_Vol_1.pdf')" class="flex-1 text-center py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Read PDF</button>
-                    <a href="purchase.html" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
+                <h3 class="heading-font text-2xl text-blue-900 mb-2">Sikkim Theological Journal - V1</h3>
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkAccess('SBC Journal V1')" class="flex-1 py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Read PDF</button>
+                    <a href="purchase.html?item=SBC Journal V1" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
                 </div>
             </div>
 
-            <div class="lit-card group" data-aos="fade-up" data-aos-delay="100">
+            <div class="lit-card group text-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white mb-6">
-                    <img src="/assets/img/Journal Cover/STJ-V02.jpg" class="w-full h-[400px] object-cover" alt="Book 2">
+                    <img src="/assets/img/Journal Cover/STJ-V02.jpg" class="w-full h-[400px] object-cover" alt="Sikkim Theological Journal - V2">
                 </div>
                 <h3 class="heading-font text-2xl text-blue-900 mb-2">Sikkim Theological Journal - V2</h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6 text-justify">Essential theological doctrines for emerging leaders and ministry students</p>
-                <div class="flex gap-4">
-                    <button onclick="checkAccess('/assets/pdf/STJ_Vol_2.pdf')" class="flex-1 text-center py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Read PDF</button>
-                    <a href="purchase.html" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkAccess('Sikkim Theological Journal - V2')" class="flex-1 py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Read PDF</button>
+                    <a href="purchase.html?item=Sikkim Theological Journal - V2" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
                 </div>
             </div>
-            
-            <div class="lit-card group" data-aos="fade-up" data-aos-delay="200">
+
+            <div class="lit-card group text-center" data-aos="fade-up" data-aos-delay="100">
                 <div class="relative rounded-2xl overflow-hidden shadow-2xl border-8 border-white mb-6">
-                    <img src="/assets/img/Journal Cover/The Shadow Grace.jpg" class="w-full h-[400px] object-cover" alt="Book 3">
+                    <img src="/assets/img/Journal Cover/The Shadow Grace.jpg" class="w-full h-[400px] object-cover" alt="The Shadow of Grace">
                 </div>
                 <h3 class="heading-font text-2xl text-blue-900 mb-2">The Shadow of Grace</h3>
-                <p class="text-gray-600 text-sm leading-relaxed mb-6 text-justify">Volume 2025: A collection of scholarly debates and theological research.</p>
-                <div class="flex gap-4">
-                    <button onclick="checkAccess('/assets/pdf/In_The_Shadow_of_Grace.pdf')" class="flex-1 text-center py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Open</button>
-                    <a href="purchase.html" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
+                <div class="flex gap-4 mt-6">
+                    <button onclick="checkAccess('The Shadow of Grace')" class="flex-1 py-3 border-2 border-blue-900 text-blue-900 font-bold text-xs uppercase hover:bg-blue-900 hover:text-white transition">Read PDF</button>
+                    <a href="purchase.html?item=The Shadow of Grace" class="px-6 py-3 bg-[#e1302e] text-white font-bold text-xs uppercase hover:bg-black transition">Buy</a>
                 </div>
             </div>
 
@@ -92,39 +81,19 @@
         <div class="relative bg-white w-full max-w-md rounded-2xl overflow-hidden shadow-2xl border-t-8 border-[#e1302e]">
             <div class="p-8">
                 <h3 class="heading-font text-3xl text-blue-900 mb-2">Access Protected</h3>
-                <p class="text-gray-500 text-sm mb-6">Please enter the unique access key for this specific publication.</p>
+                <p class="text-gray-500 text-sm mb-6">Enter the access key provided with your purchase.</p>
                 
                 <input type="password" id="modal-password-input" 
-                       class="w-full px-4 py-4 bg-slate-100 border-2 border-transparent focus:border-[#e1302e] outline-none rounded-xl mb-4 transition-all text-center text-xl tracking-widest" 
+                       class="w-full px-4 py-4 bg-slate-100 border-2 border-transparent focus:border-[#e1302e] outline-none rounded-xl mb-4 text-center text-xl tracking-widest" 
                        placeholder="••••••••">
                 
-                <div class="flex flex-col gap-3">
-                    <button onclick="submitPassword()" 
-                            class="w-full bg-[#e1302e] text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-black transition-all">
-                        Verify Access
-                    </button>
-                    <button onclick="closeModal()" 
-                            class="w-full py-2 text-gray-400 text-xs uppercase font-bold hover:text-black transition-all">
-                        Cancel
-                    </button>
-                </div>
+                <button onclick="submitPassword()" class="w-full bg-[#e1302e] text-white py-4 rounded-xl font-bold uppercase hover:bg-black transition-all">Verify Access</button>
+                <button onclick="closeModal()" class="w-full py-3 text-gray-400 text-xs uppercase font-bold hover:text-black mt-2">Cancel</button>
             </div>
         </div>
     </div>
 
-    <section class="py-24 bg-blue-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-[#e1302e] rounded-full blur-[120px] opacity-20 -mr-32 -mt-32"></div>
-        <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
-            <h2 class="heading-font text-4xl mb-8 tracking-tight">Need a Physical Copy?</h2>
-            <p class="max-w-2xl mx-auto text-blue-100 mb-12">Support our ministry by purchasing our physical publications.</p>
-            <a href="contact.html" class="inline-block border-2 border-white text-white px-10 py-4 rounded-full font-bold hover:bg-[#e1302e] hover:border-transparent transition-all">Contact Bookstore</a>
-        </div>
-    </section>
-
-    <footer class="bg-blue-900 text-white py-12 text-center text-sm border-t border-white/10">
-        <p>© 2026 Sikkim Bible College. All rights reserved.</p>
-    </footer>
-
+    <div id="footer-container"></div>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/literature-logic.js"></script>
 </body>

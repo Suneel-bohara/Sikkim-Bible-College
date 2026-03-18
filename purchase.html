@@ -21,10 +21,10 @@
     <header class="relative h-[35vh] mt-16 md:mt-24 flex items-center justify-center text-center text-white overflow-hidden">
         <div class="absolute inset-0 z-0">
             <div class="absolute inset-0 bg-[#1E3A8A]/90 z-10"></div>
-            <img src="/assets/img/Other/Purchase-Cover.jpg" class="w-full h-full object-cover" alt="Digital Payment">
+            <img src="/assets/img/Other/Purchase-Cover.jpg" class="w-full h-full object-cover" alt="Payment">
         </div>
         <div class="relative z-20 px-4" data-aos="fade-up">
-            <h1 class="heading-font text-4xl md:text-6xl mb-2">Digital Library</h1>
+            <h1 class="heading-font text-4xl md:text-6xl mb-2 text-white">Digital Library</h1>
             <p class="text-white/80 uppercase tracking-widest font-bold text-xs">Instant Access to Scholarly Resources</p>
         </div>
     </header>
@@ -39,26 +39,24 @@
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Choose Publication</label>
                             <select id="itemSelect" name="itemName" class="w-full px-5 py-4 bg-white border-2 border-slate-200 rounded-2xl font-bold text-[#1E3A8A] input-focus">
-                                <option value="STJ-V01">Sikkim Theological Journal - V1</option>
-                                <option value="STJ-V02">Sikkim Theological Journal - V2</option>
-                                <option value="Shadow-Grace">The Shadow of Grace (2025)</option>
+                                <option value="">Loading Products...</option>
                             </select>
                         </div>
                         <div>
                             <label class="block text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Price (INR)</label>
-                            <input type="text" id="itemPrice" name="itemPrice" readonly 
-                                   class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl font-bold text-green-600 text-xl">
+                            <input type="text" id="itemPrice" name="itemPrice" readonly class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl font-bold text-green-600 text-xl">
                         </div>
                     </div>
 
                     <div id="productDescription" class="p-5 bg-blue-50 rounded-2xl text-[#1E3A8A] text-sm italic border-l-4 border-[#1E3A8A]">
-                        </div>
+                        Fetching live data from college records...
+                    </div>
 
                     <div class="space-y-4">
                         <h3 class="heading-font text-xl text-[#1E3A8A]">Recipient Details</h3>
                         <div class="grid md:grid-cols-2 gap-4">
                             <input type="text" name="fullName" placeholder="Full Name" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
-                            <input type="email" name="email" placeholder="Email (For Digital Delivery)" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
+                            <input type="email" name="email" placeholder="Email (For Delivery)" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
                         </div>
                         <input type="tel" name="phone" placeholder="WhatsApp Number" required class="w-full px-5 py-4 bg-slate-50 border border-slate-200 rounded-2xl input-focus">
                     </div>
@@ -70,7 +68,7 @@
                         </div>
                         <div class="flex-1">
                             <h4 class="font-bold text-[#1E3A8A] mb-2">Verify Transaction</h4>
-                            <p class="text-xs text-slate-500 mb-4">Please upload the screenshot of your payment for instant verification and digital delivery.</p>
+                            <p class="text-xs text-slate-500 mb-4">Upload screenshot for verification.</p>
                             <label class="inline-block bg-[#1E3A8A] text-white px-6 py-2 rounded-xl cursor-pointer text-xs font-bold uppercase hover:bg-black transition-all">
                                 Upload Proof
                                 <input type="file" id="screenshot" accept="image/*" required class="hidden">
@@ -81,22 +79,21 @@
                     </div>
 
                     <button type="submit" id="submitBtn" class="w-full bg-[#1E3A8A] text-white py-5 rounded-2xl font-bold uppercase tracking-widest hover:bg-black transition-all shadow-xl">
-                        Confirm & Access Digital Copy
+                        Confirm Purchase
                     </button>
                 </form>
             </div>
 
             <div id="successBox" class="hidden p-20 text-center">
                 <div class="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">✓</div>
-                <h2 class="heading-font text-4xl text-[#1E3A8A] mb-4">Payment Received</h2>
-                <p class="text-slate-500 mb-8 max-w-sm mx-auto">Thank you for your purchase. We are verifying the screenshot. You will receive the digital download link via email/WhatsApp shortly.</p>
-                <a href="literature.html" class="px-10 py-4 bg-[#1E3A8A] text-white rounded-full font-bold uppercase text-xs tracking-widest">Browse More</a>
+                <h2 class="heading-font text-4xl text-[#1E3A8A] mb-4">Order Placed</h2>
+                <p class="text-slate-500 mb-8 max-w-sm mx-auto">We are verifying your payment. The access key will be sent to your email shortly.</p>
+                <a href="literature.html" class="px-10 py-4 bg-[#1E3A8A] text-white rounded-full font-bold uppercase text-xs tracking-widest">Back to Library</a>
             </div>
         </div>
     </main>
 
     <div id="footer-container"></div>
-
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="/purchase-logic.js"></script>
 </body>
